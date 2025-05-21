@@ -5,7 +5,7 @@ from pydantic import BaseModel
 import onnxruntime as ort
 import numpy as np
 
-# 1. Preprocessing function (same as training)
+# Preprocessing function (same as training)
 def preprocess_bangla_text(text: str) -> str:
     # Remove URLs
     text = re.sub(r'https?://\S+|www\.\S+', '', text)
@@ -30,17 +30,17 @@ def preprocess_bangla_text(text: str) -> str:
     text = unicodedata.normalize('NFC', text)
     return text
 
-# 2. Load ONNX model
+# Load ONNX model
 MODEL_PATH = "models/LogisticRegression_ONNX_Model.onnx"
 try:
     session = ort.InferenceSession(MODEL_PATH)
 except Exception as e:
     raise RuntimeError(f"Failed to load ONNX model: {e}")
 
-# 3. Label mapping
+# Label mapping
 label_map = {0: 'not bully', 1: 'religious', 2: 'sexual', 3: 'troll', 4: 'threat'}
 
-# 4. FastAPI App
+# FastAPI App
 app = FastAPI(
 title="Bangla Sentiment Classifier using TF-IDF + Logistic Regression",
 version="1.0",
@@ -49,7 +49,7 @@ description="Provides sentiment prediction for Bangla comments."
 
 @app.get("/", tags=["Root"])
 def root():
-    return {"message": "Welcome to Technoheven Bangla Sentiment Classifier API", "docs": "/docs"}
+    return {"message": "Welcome to Bangla Sentiment Classifier using TF-IDF + Logistic Regression API", "docs": "/docs"}
 
 class CommentRequest(BaseModel):
     comment: str
