@@ -37,9 +37,9 @@ The dataset used for training and evaluation is "Bangla Text Dataset" available 
 ## Results
 ### Performance Evaluation of Bangla BERT Classification Model
 
-|        Model        | Accuracy | Precision | Recall  | F1 Score |
-|---------------------|----------|-----------|---------|----------|
-| Logistic Regression | 0.83786  |  0.82778  | 0.81482 | 0.82088  |
+|    Model    | Accuracy | Precision | Recall  | F1 Score |
+|-------------|----------|-----------|---------|----------|
+| Bangla BERT | 0.83786  |  0.82778  | 0.81482 | 0.82088  |
 
 ## FastAPI Deployment
 ### Prerequisites
