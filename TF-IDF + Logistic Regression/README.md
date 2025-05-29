@@ -59,7 +59,7 @@ The dataset used for training and evaluation is "Bangla Text Dataset" available 
    ```
 
    ```bash
-   docker-compose build
+   docker-compose up
    ```
 
 3. Access the API at `http://localhost:8000` and Swagger UI at `http://localhost:8000/docs`.
